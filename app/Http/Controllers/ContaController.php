@@ -18,6 +18,7 @@ class ContaController extends Controller
     {
         $conta = $this->contaService->create(
             $request->validated('conta_id'),
+            $request->validated('valor'),
         );
 
         return response()->json(new ContaResource($conta), 201);
