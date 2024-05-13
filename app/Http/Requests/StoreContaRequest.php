@@ -23,7 +23,7 @@ class StoreContaRequest extends FormRequest
     {
         return [
             'conta_id' => 'required|integer|exists:contas,id',
-            'valor' => 'required|decimal:2|min:0',
+            'valor' => 'nullable|decimal:2|min:0',
         ];
     }
 }

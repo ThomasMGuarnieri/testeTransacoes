@@ -6,11 +6,10 @@ use App\Models\Conta;
 
 class ContaService
 {
-    public function create(int $identificador, float $valor): Conta
+    public function create(int $identificador): Conta
     {
         $conta = new Conta();
         $conta->identificador = $identificador;
-        $conta->setValor($valor);
         $conta->save();
 
         return $conta;

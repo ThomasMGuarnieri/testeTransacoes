@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('contas', function (Blueprint $table) {
+        Schema::create('transacoes', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('identificador')->unique();
+            $table->foreignId('conta_id')->constrained('contas');
+            $table->integer('valor');
+            $table->integer('forma_pagamento');
             $table->timestamps();
         });
     }
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('contas');
+        Schema::dropIfExists('transacaos');
     }
 };

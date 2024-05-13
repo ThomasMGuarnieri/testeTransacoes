@@ -4,21 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Conta extends Model
 {
-    public string $identificador;
-    private int $valor;
-
     use HasFactory;
+    public string $identificador;
+    private int $saldo;
 
-    public function setValor(float $valor): void
+    public function transacoes(): HasMany
     {
-        $this->valor = $valor * 100;
+        return $this->hasMany(Transacao::class, 'conta_id', 'id');
     }
 
-    public function getValor(): float
+    public function getSaldo(): float
     {
-        return $this->valor / 100;
+        return $this->saldo / 100;
     }
 }
