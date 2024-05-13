@@ -22,7 +22,7 @@ class ContaService
             throw new \DomainException('Saldo insuficiente', 404);
         }
 
-        $conta->setSaldo($valor - $conta->getSaldo());
+        $conta->setSaldo(abs($valor - $conta->getSaldo()));
         $conta->save();
     }
 }

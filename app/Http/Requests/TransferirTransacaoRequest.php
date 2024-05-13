@@ -2,9 +2,11 @@
 
 namespace App\Http\Requests;
 
+use App\Enums\FormaPagamento;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class StoreContaRequest extends FormRequest
+class TransferirTransacaoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +24,8 @@ class StoreContaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'conta_id' => 'required|integer',
+            'forma_pagamento' => ['required', Rule::enum(FormaPagamento::class)],
+            'conta_id' => 'required|integer|exists:contas,identificador',
             'valor' => 'nullable|decimal:0,2|min:0',
         ];
     }

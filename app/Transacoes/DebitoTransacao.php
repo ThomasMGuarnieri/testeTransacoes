@@ -16,7 +16,7 @@ class DebitoTransacao implements Transacao
 
     public function transferir(Conta $conta, float $valor): Conta
     {
-        $this->contaService->transferir($conta, $valor * ((100 - self::TAXA_DEBITO) / 100));
+        $this->contaService->transferir($conta, $valor * ((100 + self::TAXA_DEBITO) / 100));
         return $conta;
     }
 }
