@@ -1,4 +1,4 @@
-# Desafio Técnico Objective
+# Transações
 ### Nome: Thomas Marcel Guarnieri
 
 ## Execução:
@@ -84,14 +84,12 @@
 6. Os testes vão executar com `php artisan test`
 
 ## Sobre o desenvolvimento
-Inicialmente decidi aplicar exatamente o que li na descrição do desafio, sem tentar incrementar a mais a tarefa, para que ela fosse simples e objetiva. Acredito que a ideia principal seja validar a forma como solucionei os principais passos, e não uma aplicação completa.
-
 Utilizei os recursos do Laravel para garantir os dados necessários, como FormRequest e Responses, estes responsáveis por filtrar os dados que vem do request e responder de acordo com o que foi solicitado na estrutura correta.
 
 Utilizei uma pasta de services para concentrar as regras de negócio, manter os controllers limpos das lógicas de transferências.
 
 Para as taxas, tentei aplicar o padrão de Strategy, criando uma interface base, um método para cada tipo de transação e uma Factory responsável por centralizar a criação das classes.
 
-Para finalizar fiz todos os testes na aplicação a fim de garantir o funcionamento, inclusive utilizei um pouco de TDD para desenvolver o que foi solicitado.
+Para finalizar fiz todos os testes na aplicação a fim de garantir o funcionamento, inclusive utilizei um pouco de TDD para desenvolver.
 
 
